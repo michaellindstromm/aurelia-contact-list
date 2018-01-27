@@ -1,0 +1,25 @@
+<template>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./styles.css"></require>
+  <require from="./contact-list"></require>
+
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+              <i class="fa fa-user"></i>
+              <span>Contacts</span>
+            </a>
+      </div>
+    </nav>
+  </div>
+
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+
+  <div class="container">
+    <div class="row">
+      <contact-list class="col-md-4"></contact-list>
+      <router-view class="col-md-8"></router-view>
+    </div>
+  </div>
+</template>
